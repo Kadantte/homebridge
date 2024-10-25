@@ -1,12 +1,12 @@
 import "source-map-support/register"; // registering node-source-map-support for typescript stack traces
-import commander from "commander";
+import { Command } from "commander";
 import { HAPStorage } from "hap-nodejs";
-import getVersion, { getRequiredNodeVersion } from "./version";
-import { User } from "./user";
+import { satisfies } from "semver";
 import { Logger } from "./logger";
 import { Server } from "./server";
 import { HomebridgeOptions } from "./server";
-import { satisfies } from "semver";
+import { User } from "./user";
+import getVersion, { getRequiredNodeVersion } from "./version";
 import Signals = NodeJS.Signals;
 
 const log = Logger.internal;
@@ -31,7 +31,8 @@ export = function cli(): void {
 
   let shuttingDown = false;
 
-  commander
+  const program = new Command();
+  program
     .version(getVersion())
     .option("-C, --color", "force color in logging", () => forceColourLogging = true)
     .option("-D, --debug", "turn on debug level logging", () => debugModeEnabled = true)
@@ -49,7 +50,7 @@ export = function cli(): void {
     .parse(process.argv);
 
   if (noLogTimestamps) {
-    Logger.setTimestampEnabled(false); 
+    Logger.setTimestampEnabled(false);
   }
 
   if (debugModeEnabled) {
