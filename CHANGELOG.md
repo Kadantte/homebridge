@@ -2,7 +2,105 @@
 
 All notable changes to `homebridge` will be documented in this file. This project tries to adhere to [Semantic Versioning](http://semver.org/).
 
-## BETA
+## v1.9.0 (2025-02-11)
+
+### Changed
+
+- Added method updateDisplayName() (#3764) (@justjam2013)
+- Fixed method handleUpdatePlatformAccessories() (#3765) (@justjam2013)
+- Make it possible to set Characteristic.SerialNumber via config.json (#3761) (@vvorcun)
+- fix: check for valid array in `handleUpdatePlatformAccessories`
+- minor dependency updates
+
+### Homebridge Dependencies
+
+- `hap-nodejs` @ `v0.12.3`
+
+## v1.8.5 (2024-10-25)
+
+### Changed
+
+- support plugins with dots in their npm scope (#3687) (@gtalusan)
+- mark compatible with node v22
+- minor dependency updates
+
+### Homebridge Dependencies
+
+- `hap-nodejs` @ `v0.12.3`
+
+## v1.8.4 (2024-07-19)
+
+### Fixed
+
+- Fix default FirmwareRevision (#3644) (@hjdhjd)
+
+### Changed
+
+- Detect config interface on registerPlatform (#3609) (@duddu)
+- Updated dependencies, fix `typedoc` generation
+- Added log messaging about upcoming Homebridge v2.0.0 update
+  - NOTICE TO USERS AND PLUGIN DEVELOPERS
+    - Homebridge 2.0 is on the way and brings some breaking changes to existing plugins.
+    - Please visit the following link to learn more about the changes and how to prepare:
+      - [Updating-To-Homebridge-v2.0](https://github.com/homebridge/homebridge/wiki/Updating-To-Homebridge-v2.0)
+
+### Homebridge Dependencies
+
+- `hap-nodejs` @ `v0.12.2`
+
+## v1.8.3 (2024-06-19)
+
+### Changed
+
+- Updated dependencies (`hap-nodejs`)
+
+### Homebridge Dependencies
+
+- `hap-nodejs` @ `v0.12.2`
+
+## v1.8.2 (2024-05-16)
+
+### Changed
+
+- Updated dependencies (`hap-nodejs`)
+- correct comment for automatically added 'alpha' labels in labeler.yml (#3608) (@techm4te)
+
+### Homebridge Dependencies
+
+- `hap-nodejs` @ `v0.12.1`
+
+## v1.8.1 (2024-04-27)
+
+### Fixed
+
+- shared use of `commander` between homebridge and the UI repo
+
+### Other Changes
+
+- Update Discord Webhook
+
+## v1.8.0 (2024-04-20)
+
+### Added
+
+- allow for FirmwareRevision override in config
+- add GitHub labeler action
+- allow custom `NODE_OPTIONS` and `DEBUG` on child bridges
+- add logging success colour (#3581)
+- adds alpha publisher
+
+### Changed
+
+- improve `README` installation docs
+- updated dependencies
+- updated Discord Webhooks so notifications are seperated for `release` and `pre-release`
+- updated lint rules for imports
+- regenerate docs
+- update hap-nodejs version
+
+### Homebridge Dependencies
+
+- `hap-nodejs` @ `v0.12.0`
 
 ## v1.7.0 (2023-11-04)
 
